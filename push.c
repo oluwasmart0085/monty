@@ -41,7 +41,7 @@ void op_push(stack_t **stack, unsigned int line_number)
  */
 void push_error(stack_t **stack, unsigned int line_number)
 {
-	dprintf(STDERR_FILENO, "L%u: usage: push integer\n",
+	vprintf(STDERR_FILENO, "L%u: usage: push integer\n",
 		line_number);
 	free_all(stack);
 	exit(EXIT_FAILURE);
@@ -59,7 +59,7 @@ void add_node(stack_t **stack, int argument)
 	new = malloc(sizeof(stack_t));
 	if (!new)
 	{
-		dprintf(STDERR_FILENO, "Error: malloc failed\n");
+		vprintf(STDERR_FILENO, "Error: malloc failed\n");
 		free_all(stack);
 		exit(EXIT_FAILURE);
 	}
@@ -84,7 +84,7 @@ void add_node_end(stack_t **stack, int argument)
 	new = malloc(sizeof(stack_t));
 	if (!new)
 	{
-		dprintf(STDERR_FILENO, "Error: malloc failed\n");
+		vprintf(STDERR_FILENO, "Error: malloc failed\n");
 		free_all(stack);
 		exit(EXIT_FAILURE);
 	}
