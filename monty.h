@@ -16,6 +16,9 @@
 #define TRUE 1
 #define FALSE 0
 #define DELIMS "\n \t\r"
+#define _XOPEN_SOURCE 700
+#define _POSIX_C_SOURCE  200809L
+#define _GNU_SOURCE
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
